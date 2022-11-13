@@ -13,7 +13,7 @@ import Foundation
 
 
 // MARK: - Welcome
-struct StartWars: Codable {
+struct StarWars: Codable {
     let count: Int?
     let next: String?
     let previous: JSONNull?
@@ -22,8 +22,8 @@ struct StartWars: Codable {
 
 // MARK: - Result
 struct Result: Codable {
-    let name, height, mass, hairColor: String?
-    let skinColor, eyeColor, birthYear: String?
+    let name, height, mass, hair_color: String?
+    let skin_color, eye_color, birth_year: String?
     let gender: Gender?
     let homeworld: String?
     let films, species, vehicles, starships: [String]?
