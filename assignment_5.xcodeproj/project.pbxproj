@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5242CF5291F0A5C00AC41C2 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5242CF4291F0A5C00AC41C2 /* MyTableViewCell.swift */; };
 		A5A33697291EE83800DAF607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A33696291EE83800DAF607 /* AppDelegate.swift */; };
 		A5A33699291EE83800DAF607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A33698291EE83800DAF607 /* SceneDelegate.swift */; };
 		A5A3369B291EE83800DAF607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A3369A291EE83800DAF607 /* ViewController.swift */; };
 		A5A3369E291EE83800DAF607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A3369C291EE83800DAF607 /* Main.storyboard */; };
 		A5A336A0291EE83900DAF607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5A3369F291EE83900DAF607 /* Assets.xcassets */; };
 		A5A336A3291EE83900DAF607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A336A1291EE83900DAF607 /* LaunchScreen.storyboard */; };
+		A5A336AB291EE91100DAF607 /* StarWars.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A336AA291EE91100DAF607 /* StarWars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5242CF4291F0A5C00AC41C2 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		A5A33693291EE83800DAF607 /* assignment_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignment_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A33696291EE83800DAF607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5A33698291EE83800DAF607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		A5A3369F291EE83900DAF607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5A336A2291EE83900DAF607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5A336A4291EE83900DAF607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5A336AA291EE91100DAF607 /* StarWars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				A5A33696291EE83800DAF607 /* AppDelegate.swift */,
 				A5A33698291EE83800DAF607 /* SceneDelegate.swift */,
 				A5A3369A291EE83800DAF607 /* ViewController.swift */,
+				A5242CF4291F0A5C00AC41C2 /* MyTableViewCell.swift */,
+				A5A336AA291EE91100DAF607 /* StarWars.swift */,
 				A5A3369C291EE83800DAF607 /* Main.storyboard */,
 				A5A3369F291EE83900DAF607 /* Assets.xcassets */,
 				A5A336A1291EE83900DAF607 /* LaunchScreen.storyboard */,
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A336AB291EE91100DAF607 /* StarWars.swift in Sources */,
 				A5A3369B291EE83800DAF607 /* ViewController.swift in Sources */,
 				A5A33697291EE83800DAF607 /* AppDelegate.swift in Sources */,
+				A5242CF5291F0A5C00AC41C2 /* MyTableViewCell.swift in Sources */,
 				A5A33699291EE83800DAF607 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

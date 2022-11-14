@@ -16,7 +16,7 @@ import Foundation
 struct StarWars: Codable {
     let count: Int?
     let next: String?
-    let previous: JSONNull?
+    let previous: String?
     let results: [Result]?
 }
 

@@ -24,27 +24,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         getDataFromAPI()
         
     }
-    var page = "https://swapi.dev/api/people"
-    var nextPage = "https://swapi.dev/api/people"
-    var prevPage = "https://swapi.dev/api/people"
+ 
     @IBAction func requestButton(_ sender: Any) {
         getDataFromAPI()
         
     }
     @IBAction func prevButton(_ sender: Any) {
-        page = prevPage
         self.myTableView.reloadData()
     }
     
     
     @IBAction func nextButton(_ sender: Any) {
-        page = nextPage
         self.myTableView.reloadData()
     }
-    
+    var pageNum = 7
     func getDataFromAPI(){
         //convers string to URL format
-        guard let url = URL(string: page) else {
+        guard let url = URL(string: "https://swapi.dev/api/people/?page=\(pageNum)") else {
             print("Failed to get to url")
             return
         }
@@ -59,8 +55,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let decoder = JSONDecoder()
                 do{
                     let parsedData = try? decoder.decode(StarWars.self, from: data)
-                    self.actors = parsedData!.results!
-                    //self.nextPage = parsedData!.next!
+                    self.actors += parsedData?.results ?? []
+
                     
                     
                     print("The data:\(parsedData?.results)")
@@ -73,6 +69,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         task.resume()
+        sleep(1)
+        DispatchQueue.main.async {
+            self.myTableView.reloadData()
+        }
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,6 +87,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let homeworld  = actors[indexPath.row].homeworld!
         let output = "name - \(name) \n eye color - \(eyeColor) \n hair color - \(hairColor) \n homeworld - \(homeworld)"
         cell.titleLable.text = output
+        //paginaiton
+        if indexPath.item == actors.count - 1{
+         print("fetch more data")
+            if(pageNum < 9){
+                pageNum += 1
+                getDataFromAPI()
+            }
+            else{
+                print("end of list")
+            }
+            
+        }
         return cell
         
     }
