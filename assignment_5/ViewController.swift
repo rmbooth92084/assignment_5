@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  assignment_5
 //
-//  Created by user227341 on 11/11/22.
+//  Created by Raymond Booth on 11/11/22.
 //
 
 import UIKit
@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Actors"
         // Do any additional setup after loading the view.
         myTableView.delegate = self
         myTableView.dataSource = self
@@ -37,10 +38,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func nextButton(_ sender: Any) {
         self.myTableView.reloadData()
     }
-    var pageNum = 7
+    
+    
+    
+    var pageNum = 1
     func getDataFromAPI(){
         //convers string to URL format
-        guard let url = URL(string: "https://swapi.dev/api/people/?page=\(pageNum)") else {
+        guard let url = URL(string: "https://swapi.py4e.com/api/people/?page=\(pageNum)") else {
             print("Failed to get to url")
             return
         }
@@ -106,6 +110,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
         
+    }
+    var place = 0
+    //This fuction deals with tapping the a cell and sending all the details to the second VC
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+       //completionHandler?()
+        
+        print("You tapped \(indexPath.row)")
+        place = indexPath.row
+        let actor = actors[indexPath.row]
+
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(place > -1){
+            if let des = segue.destination as? DetailsViewController {
+                des.name = actors[place].name!
+                des.hairColor = actors[place].hair_color!
+                des.eyeColor = actors[place].eye_color!
+                des.homeWorld = actors[place].homeworld!
+                des.films = actors[place].films
+            }
+        }
     }
 
 
